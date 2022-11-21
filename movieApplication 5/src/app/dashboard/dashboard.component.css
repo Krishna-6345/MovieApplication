@@ -1,0 +1,74 @@
+
+.content {
+  top: 10%;
+  left: 10%;
+  position: static;
+  margin: 20px;
+}
+
+.content h1 {
+  color: rgb(19, 19, 20);
+  font-size: 40px;
+  font-weight: bold;
+  font-family: 'Merriweather', serif;
+}
+
+img h1 {
+  font-weight: bold;
+  color: rgb(19, 19, 20);
+}
+
+.container {
+  border-radius: 10px;
+}
+
+.body{
+  background-color: rgb(255, 241, 225);
+}
+
+.row img {
+  border-radius: 5px;
+  margin-left: 25px;
+  width: 200px;
+  height: 300px;
+  margin-bottom: 10px;
+  transition: 0.3s ease-in-out;
+}
+
+.row img:hover {
+  transition: 0.3s ease-in-out;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+mat-card-actions>button {
+  margin: 10px;
+}
+
+select option {
+  text-align: start;
+}
+
+.pagination{
+  display:flex;
+  margin:10px 30px;
+  align-items: center;
+  justify-content: center;
+  color:black;
+}
+
+.page{
+  padding:20px;
+  cursor:pointer;
+}
+.page.disabled{
+  cursor:not-allowed;
+  color:grey;
+}
+.current{
+  padding: 10px 20px;
+  border-radius: 50%;
+  border: 5px solid black;
+  font-size: 20px;
+  font-weight: 600;
+}

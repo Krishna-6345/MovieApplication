@@ -1,0 +1,42 @@
+<div class="body">
+    <!-- <div>
+   <span class="avatar">
+    <a href="pragya">
+     <img src="ImageFilePath" style="height:150px; margin-top: 20px;margin-left: 10px; border-radius: 50%; border: 5px solid #010b44;" alt="This is a small profile image of Digital Ocean’s mascot,">
+   
+    </a>
+   </span>
+   </div> -->
+   </div>
+
+<h1 class="neon"><strong><u>Watched Movies</u></strong></h1>
+<ng-container *ngIf="watchedLength !=0">
+    <div class="container mt-4 mb-4">
+        <div class="row">
+            <div class="box col-lg-3 mt-3" *ngFor="let item of watched | paginate: { id: 'list_pagination',
+        itemsPerPage: 8,
+        currentPage: page2,
+        totalItems:  watchedLength }">
+  
+                <img src="https://image.tmdb.org/t/p/w300/{{item.posterPath }}" alt="">
+                <mat-card-content>
+                    <mat-card-title>
+                        <h1 mat-sort-header>{{item.title}}</h1>
+                    </mat-card-title>
+                </mat-card-content>
+                <mat-card-actions>
+  
+                    <button mat-button (click)="deleteWatchedMovie(item.movieId)">
+                        <mat-icon color="warn">delete</mat-icon>
+                    </button>
+                   
+                </mat-card-actions>
+  
+            </div>
+        </div>
+        <div style="padding: 20px;">
+            <pagination-controls class="text-center" id="list_pagination" (pageChange)=" page2 = $event">
+            </pagination-controls>
+        </div>
+    </div>
+  </ng-container>

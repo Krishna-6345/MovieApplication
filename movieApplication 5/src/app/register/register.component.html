@@ -1,0 +1,50 @@
+
+
+<div class="body" >
+  <div class="container">
+     <div class="row  justify-content-center align-items-center ">
+        <div class="card">
+           <div class="card-body p-2">
+             <h2 class="text text-center mb-4" style="font-weight: bold; "><u>Sign-Up</u></h2>
+           <div class="container">
+           <hr>
+ 
+             <form [formGroup]="registerForm">
+       
+               <!-- <img src="../../../assets/logo.png" alt=""/> -->
+     
+               <div style="margin-top: 0px;">
+                 <!-- <h1 style="margin-left:47%">Register</h1> -->
+         
+                   <mat-form-field class="full-width" appearance="outline">
+                     <label for="username">Enter Username</label><br>
+                     <input required type="text"  name="username" [(ngModel)]="user.userName"  matInput placeholder="Enter Username" formControlName="userName">
+                   </mat-form-field>
+        
+                   <mat-form-field class="full-width" appearance="outline">
+                     <label for="emailId">Enter your mail-Id</label><br>
+                     <input type="email"  name="emailId" [(ngModel)]="user.emailId" matInput placeholder="Enter EmailId" formControlName="emailId">
+            
+                   </mat-form-field>
+                   <mat-form-field class="full-width" appearance="outline">
+                     <label for="gender">Enter your Gender</label><br>
+                     <input required type="text"  name="gender" [(ngModel)]="user.gender"  matInput placeholder="Enter your gender" formControlName="gender">
+                   </mat-form-field>
+                   <mat-form-field class="full-width" appearance="outline">
+                     <label for="password">Enter password</label><br>
+                     <input type="password"  name="password" [(ngModel)]="user.password" matInput placeholder="Enter Password" formControlName="password">
+              
+                   </mat-form-field>
+                   
+                   <button [disabled]="registerForm.status === 'INVALID'" type="submit" style="margin-left: 21%;" class="btn btn-success" (click)="register()" >Register</button>
+ 
+         <!-- <button style="margin-left: 5%;"  mat-stroked-button color="primary" [routerLink]="'/login'">Login</button>  -->
+ 
+               </div>
+             </form>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div> 

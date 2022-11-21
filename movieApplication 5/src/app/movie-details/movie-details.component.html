@@ -1,0 +1,59 @@
+<div id="bgimg" style="background-image: url(https://image.tmdb.org/t/p/w300/{{selectedMovieData.backdrop_path}});">
+    <div class="container" style="width: max-content;">
+        <div id="infoCard">
+            <div class="row" style="margin-top: 5px; margin-bottom: 5px;">
+                <div class="col">
+                    <mat-card class="example-card movie-img">
+                        <img style="height: 600px;" mat-card-image src="https://image.tmdb.org/t/p/w300/{{selectedMovieData.poster_path }} ">
+                    </mat-card>
+                </div>
+                <div class="col content">
+                    <mat-card class="cardContent">
+                        <mat-card-title style="font-size: 30px; text-shadow: 1px 1px 2px red; color: black;">
+                            {{selectedMovieData.original_title}}
+                        </mat-card-title><br>
+                        <mat-card-subtitle style="font-size: 20px; color: black; text-shadow: 1px 1px 2px whitesmoke;">Released:&nbsp;&nbsp;&nbsp; {{selectedMovieData.release_date}}
+                        </mat-card-subtitle>
+                        <mat-card-subtitle style="font-size: 15px; color: black;">Overview :&nbsp;&nbsp;&nbsp; {{selectedMovieData.overview}}
+                        </mat-card-subtitle>
+                        <mat-card-subtitle style="color: black;">vote_average : &nbsp;&nbsp;&nbsp; {{selectedMovieData.vote_average}}
+                        </mat-card-subtitle>
+                        <mat-card-subtitle style="color: black;">vote_count :&nbsp;&nbsp;&nbsp; {{selectedMovieData.vote_count}}
+                        </mat-card-subtitle>
+                        <div fxLayout="row wrap" fxLayoutGap="2px grid">
+                            <mat-card-subtitle style="color: black;"> genre :</mat-card-subtitle>
+                            <mat-card-subtitle style="color: black;" *ngFor="let genre of particularMovieGenre">
+                                {{genre.name}}&nbsp;
+                            </mat-card-subtitle>
+                        </div>
+                        <a mat-button matTooltip="Add to Favorite" (click)="addToFavourite(selectedMovieData)">
+                            <mat-icon>favorite</mat-icon>
+                        </a>
+
+                        <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert" style="font-size: 15px;">
+
+                            <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert" style="font-size: 15px;">
+                                <strong>Success !!!</strong> Movie added to your Favourites
+
+                                <button (click)="closeAlert()" type="button" class="close" data-dismis="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                        <div *ngIf="warningAlert" class="alert alert-danger alert-dismissible fade show" role="alert" style="font-size: 15px;">
+                            <strong>Warning !!!</strong> Movie already added to your Favourites
+                            <button (click)="closeAlert()" type="button" class="close" data-dismis="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+
+
+                    </mat-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

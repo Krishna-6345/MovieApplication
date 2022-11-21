@@ -1,0 +1,59 @@
+<mat-toolbar>
+  <mat-toolbar-row style="background-color: rgba(19, 18, 18, 0.877)">
+    <span class='Film fontawesomeicon' style="color:aqua" routerLink='/dashboard' [routerLinkActive]="['is-active']" > Movie-Zine </span>
+    <!-- <span><button class="home" routerLink='/dashboard' [routerLinkActive]="['is-active']"><i class="fa fa-home"></i></button></span> -->
+    <span class="example-spacer"></span>
+    <div *ngIf = "loginSignUpButton">
+        <a><button class="onSelect" routerLink='/login' [routerLinkActive]="['is-active']" type="button" class="btn btn-outline-success">Login</button>&nbsp;</a>
+        <a><button calss="onSelect" routerLink='/register' [routerLinkActive]="['is-active']" type="button" class="btn btn-outline-info">Register</button>&nbsp;</a>
+  </div>
+    <div class="profile-container d-flex" *ngIf="profileButton" style="margin: 0 5px;padding:1rem">
+      <button mat-icon-button [matMenuTriggerFor]="menu" >
+        <img height="40px" width="40px" style="border-radius: 20px;margin-left: 5px;"
+          [src]="profileUrl ?? './/src//assets//avatar.webp' ">
+      </button>
+      <h1 style="color: rgb(16, 179, 194);">Hi, {{userName}} </h1>
+      <mat-menu #menu="matMenu" >
+        <button mat-menu-item>
+        <button type="button" class="btn btn-outline-success" data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop">Photo Upload</button>
+        </button>
+        <button mat-menu-item>
+          <button type="button" class="btn btn-outline-info" (click)="goToWatched()" >Watched</button>
+          </button>
+        <button mat-menu-item>
+          <button type="button" class="btn btn-outline-warning" (click)="goToUserDashboard()">Favorite</button>
+          </button>
+         
+        <button mat-menu-item>
+          <button type="button" class="btn btn-outline-danger" (click)="logOut()">Logout</button>
+        </button>
+      </mat-menu>
+    </div>
+  </mat-toolbar-row>
+  </mat-toolbar>
+  <!-- Modal for uploading the profile picture -->
+<div class="modal " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3 class="modal-title" style="font-size: 40px;font-family: 'Lobster', cursive;" id="staticBackdropLabel">Hello
+        {{userName}} </h3>
+      <button type="button" #myModalClose class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body text-center">
+      <h2>Upload Profile picture Here</h2>
+      <div class="profile-image">
+        <img height="140px" width="140px" [src]="profileUrl ?? './/src//assets//avatar.webp' ">
+      </div>
+      <div style="margin: 10px 0px;">
+        <input type="file" (click)="saveProfile($event)">
+      </div>
+      <button type="button" class="btn btn-success" data-bs-dismiss="modal" (click)="onUpload()">Upload</button>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+    </div>
+  </div>
+</div>

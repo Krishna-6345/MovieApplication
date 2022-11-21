@@ -1,0 +1,43 @@
+.card {
+    backface-visibility: visible;
+        /* background-image: linear-gradient(rgb(88, 143, 226), rgb(255, 255, 255)); */
+        border-radius: 20px;
+        width: 380px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        padding: 10px;
+        border: 4px black solid;
+            opacity: 0.95;
+            background-color: rgb(157, 193, 227);
+    }
+
+    .container {
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /* min-height: 40vh; */
+      } 
+    
+    label, h2 {
+        color: black;
+    }
+    
+    .body {
+        /* background-image: url('http://source.unsplash.com/1600x800/?movie'); */
+        background-image: url('/assets/background.jpg');
+        background-size: cover contain;
+        background-position: center center;
+    }
+    
+    button {
+        width: 200px;
+        margin-top: 10px;
+        border-radius: 20px;
+    }
+    
+    .full-width {
+        width: 90%;
+    }
+    

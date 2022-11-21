@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row" style="width:100%; margin-left: 1px;">
+    <div class="col-3" style="padding:7px; margin-top: 10px;" *ngFor="let data of allMovies">
+        <mat-card class="mat-elevation-z4" >
+            <img mat-card-image style="margin-top:5px ; margin-bottom:5px;"  (click)="movieDetailsPage(data)" class="image-style" src="https://image.tmdb.org/t/p/w300/{{data.poster_path }}"  > 
+            <mat-card-content>
+                <mat-card-title class="card-title-css" data-bs-toggle="tooltip" data-bs-placement="top" title="{{data.original_title}}">{{data.original_title}}</mat-card-title>
+                <mat-card-subtitle >Ratings: {{data.vote_average}} <br>
+                Release Date: {{data.release_date}}
+                <button id="btn" mat-raised-button color="accent" (click)="addFavourite(data)">
+                  <mat-icon>favorite</mat-icon> 
+                 </button>
+                </mat-card-subtitle>                  
+              </mat-card-content>
+        </mat-card>
+      </div>
+  </div>
+  <br>
+  <br>
+  <div class="pagination">
+      <div class="page" id="prev">
+          <button [disabled]="currentPage<=1" (click)="decreasePage()" mat-raised-button>Previous Page</button></div>
+      <div class="current" id="current">{{currentPage}}</div>
+      <div class="page" id="next"><button [disabled]="currentPage>=33349" (click)="increasePage()" mat-raised-button>Next Page </button>
+          </div>
+  </div>
+</div>

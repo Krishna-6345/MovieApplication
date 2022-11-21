@@ -1,0 +1,40 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+.profile-image>img {
+border-radius: 100px;
+object-fit: cover;
+object-position: center;
+}
+.fontawesomeicon::before {
+display: inline-block;
+text-rendering: auto;
+-webkit-font-smoothing: antialiased;
+color: aqua;
+}
+.Film .fontawesomeicon{
+text-shadow: 2px;
+}
+.Film::before {
+font: var(--fa-font-solid);
+content: ' \f008';
+}
+.home {
+background-color: rgba(42, 41, 41, 0.828);
+border: none;
+color: white;
+padding: 8px 12px;
+font-size: 16px;
+cursor: pointer;
+}
+/* Darker background on mouse-over */
+.home:hover {
+background-color: rgb(100, 190, 228);
+}
+h1 {
+color: bisque;
+display: flex;
+margin: 5px 0 0 20px;
+font-size: 1.6rem;
+font-family: 'Merriweather', serif;
+}

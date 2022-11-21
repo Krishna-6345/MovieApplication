@@ -1,0 +1,32 @@
+
+<div class="body" >
+  <div class="containerMain">
+    <div class="card">
+      <div class="container ">
+     <img src="../../../assets/logo.png" alt=""/> 
+      </div>
+  <h1 style="margin-right:100%" style ="text-decoration: underline;">Login Form</h1>
+  <form class="example-form" [formGroup]="loginForm" (ngSubmit)="login()">
+
+      <mat-form-field class="full-width"  appearance="outline">
+        <label for="username">Enter username</label>
+        <input  name="username" matInput placeholder="Enter username"  formControlName="userName">
+      </mat-form-field>
+  
+        <br>    
+  
+      <mat-form-field class="full-width" appearance="outline">
+        <label for="password">Enter password</label>
+        <input type="password" matInput placeholder="Enter Password"  formControlName="password">
+      </mat-form-field>
+
+        <br>      
+
+      <button type="submit" style="margin-left:10%;" mat-stroked-button color="accent" >Login</button>
+  </form>
+  
+       <br>
+  
+    </div>
+  </div>
+</div>
